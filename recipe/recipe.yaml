@@ -1,5 +1,5 @@
 context:
-  version: "0.1.1"
+  version: "0.2.0"
 
 package:
   name: edgehop
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ytausch/edgehop/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 35e539a6b2e33080f20558c9d1fb4b7bdd8de347c80d8349a865130f374a22c7
+  sha256: 0c8815e8f3867924fb243ce6335bae9d86c457f0d95a3b371d22714bfeafd3b7
 
 build:
   number: 0
