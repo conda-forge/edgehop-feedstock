@@ -1,5 +1,5 @@
 context:
-  version: "0.4.0"
+  version: "0.4.1"
 
 package:
   name: edgehop
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ytausch/edgehop/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 8580c46d98b158b514e8ec9460737b68c7ea4496ee563895f7fe1487817f4c86
+  sha256: a2b216f42cce70e1db18cd301ad7ad014d47cf476e8a0dd05392f666dabe21e3
 
 build:
   number: 0
@@ -23,13 +23,13 @@ build:
           - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path .
         else:
           - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path .
-      - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
 
 requirements:
   build:
     - ${{ stdlib('c') }}
     - ${{ compiler('c') }}
     - ${{ compiler('rust') }}
+    # not used (upstream ships THIRD_PARTY_LICENSES.txt), but required by the conda-forge linter
     - cargo-bundle-licenses
     - cargo-auditable
 
@@ -49,7 +49,7 @@ about:
   license: MIT
   license_file:
     - LICENSE
-    - THIRDPARTY.yml
+    - THIRD_PARTY_LICENSES.txt
   repository: https://github.com/ytausch/edgehop
 
 extra:
